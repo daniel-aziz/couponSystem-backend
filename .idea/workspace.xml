@@ -5,7 +5,53 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c1ecfc7b-7047-445b-96ac-421cfc3f908b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/jb/couponSystem/Exceptions/TokenException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_datatype_jackson_datatype_jsr310_2_11_4.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_module_jackson_module_parameter_names_2_11_4.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__jakarta_xml_bind_jakarta_xml_bind_api_2_3_32.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_13_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__mysql_mysql_connector_java_8_0_25.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_logging_log4j_log4j_to_slf4j_2_13_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_skyscreamer_jsonassert_1_5_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_yaml_snakeyaml_1_28.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_yaml_snakeyaml_1_28.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/couponSystem.iml" beforeDir="false" afterPath="$PROJECT_DIR$/couponSystem.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/jb/couponSystem/Advice/CouponSystemRestException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jb/couponSystem/Advice/CouponSystemRestException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/jb/couponSystem/CLR/InsertMockData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jb/couponSystem/CLR/InsertMockData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/jb/couponSystem/Controllers/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jb/couponSystem/Controllers/AdminController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/jb/couponSystem/Controllers/CompanyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jb/couponSystem/Controllers/CompanyController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/jb/couponSystem/Controllers/CustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jb/couponSystem/Controllers/CustomerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/jb/couponSystem/Controllers/GuestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jb/couponSystem/Controllers/GuestController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/jb/couponSystem/LoginManager/LoginManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jb/couponSystem/LoginManager/LoginManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/jb/couponSystem/Repositories/CompanyRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jb/couponSystem/Repositories/CompanyRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/jb/couponSystem/Repositories/CouponRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jb/couponSystem/Repositories/CouponRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/jb/couponSystem/Repositories/CustomerRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jb/couponSystem/Repositories/CustomerRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/jb/couponSystem/Services/AdminService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jb/couponSystem/Services/AdminService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/jb/couponSystem/Services/CompanyService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jb/couponSystem/Services/CompanyService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/jb/couponSystem/Services/CustomerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jb/couponSystem/Services/CustomerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/jb/couponSystem/Services/GuestService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jb/couponSystem/Services/GuestService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/jb/couponSystem/Utils/ControllerUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jb/couponSystem/Utils/ControllerUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/jb/couponSystem/Utils/JWTutil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jb/couponSystem/Utils/JWTutil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Data.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Data.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/asset-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/asset-manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/static/css/main.8df2eeba.chunk.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/static/css/main.8df2eeba.chunk.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/static/js/2.1eaba7ae.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/static/js/2.1eaba7ae.chunk.js.LICENSE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/static/js/2.1eaba7ae.chunk.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/static/js/main.3637a1b2.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/static/js/main.3637a1b2.chunk.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Data.sql" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Data.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/jb/couponSystem/Controllers/GuestController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/jb/couponSystem/Controllers/GuestController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/jb/couponSystem/Repositories/CouponRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/jb/couponSystem/Repositories/CouponRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/jb/couponSystem/Services/AdminService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/jb/couponSystem/Services/AdminService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/jb/couponSystem/Services/CompanyService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/jb/couponSystem/Services/CompanyService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/jb/couponSystem/Services/CustomerService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/jb/couponSystem/Services/CustomerService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/jb/couponSystem/Services/GuestService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/jb/couponSystem/Services/GuestService.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,6 +132,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="CustomerService" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.jb.couponSystem.Services.CustomerService" />
+      <module name="couponSystem" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.jb.couponSystem.Services.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="JWTutil" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.jb.couponSystem.Utils.JWTutil" />
       <module name="couponSystem" />
@@ -117,10 +176,12 @@
       <item itemvalue="Application.CouponSystemApplication" />
       <item itemvalue="Application.JWTutil" />
       <item itemvalue="Application.testCategory" />
+      <item itemvalue="Application.CustomerService" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.CouponSystemApplication" />
+        <item itemvalue="Application.CustomerService" />
         <item itemvalue="Application.testCategory" />
         <item itemvalue="Application.JWTutil" />
         <item itemvalue="Application.ArtUtil" />
@@ -138,15 +199,16 @@
     </task>
     <servers />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/jb/couponSystem/Services/AdminService.java</url>
-          <line>88</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>

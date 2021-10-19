@@ -3,6 +3,8 @@ package com.jb.couponSystem.Controllers;
 import com.jb.couponSystem.Beans.Company;
 import com.jb.couponSystem.Beans.Customer;
 import com.jb.couponSystem.Exceptions.CouponSystemException;
+import com.jb.couponSystem.Exceptions.SystemErrMsg;
+import com.jb.couponSystem.Exceptions.TokenException;
 import com.jb.couponSystem.Services.AdminService;
 import com.jb.couponSystem.Utils.ControllerUtil;
 import com.jb.couponSystem.Utils.JWTutil;
@@ -35,7 +37,7 @@ public class AdminController {
      * @throws CouponSystemException
      */
     @PostMapping("addCompany")
-    public ResponseEntity<?> addCompany(@RequestHeader(name = "Authorization") String token, @RequestBody Company company) throws CouponSystemException {
+    public ResponseEntity<?> addCompany(@RequestHeader(name = "Authorization") String token, @RequestBody Company company) throws CouponSystemException , TokenException {
         if (jwTutil.validateToken(token)) {
             try {
                 adminService.addCompany(company);
@@ -55,7 +57,7 @@ public class AdminController {
      * @throws CouponSystemException
      */
     @PostMapping("updateCompany")
-    public ResponseEntity<?> updateCompany(@RequestHeader(name = "Authorization") String token, @RequestBody Company company) throws CouponSystemException {
+    public ResponseEntity<?> updateCompany(@RequestHeader(name = "Authorization") String token, @RequestBody Company company) throws  TokenException {
         if (jwTutil.validateToken(token)) {
             try {
                 adminService.updateCompany(company);
@@ -75,7 +77,7 @@ public class AdminController {
      * @throws CouponSystemException
      */
     @DeleteMapping("deleteCompany/{companyId}")
-    public ResponseEntity<?> deleteCompany(@RequestHeader(name = "Authorization") String token, @PathVariable int companyId) throws CouponSystemException {
+    public ResponseEntity<?> deleteCompany(@RequestHeader(name = "Authorization") String token, @PathVariable int companyId) throws  TokenException {
         if (jwTutil.validateToken(token)) {
             try {
                 adminService.deleteCompany(companyId);
@@ -95,7 +97,7 @@ public class AdminController {
      * @throws CouponSystemException
      */
     @PostMapping("getAllCompanies")
-    public ResponseEntity<?> getAllCompanies(@RequestHeader(name = "Authorization") String token) throws CouponSystemException {
+    public ResponseEntity<?> getAllCompanies(@RequestHeader(name = "Authorization") String token) throws TokenException {
         if (jwTutil.validateToken(token)) {
             try {
                 return controllerUtil.responseEntityBuilder(token, adminService.getAllCompanies(), HttpStatus.OK);
@@ -114,7 +116,7 @@ public class AdminController {
      * @throws CouponSystemException
      */
     @PostMapping("getOneCompany/{companyId}")
-    public ResponseEntity<?> getOneCompany(@RequestHeader(name = "Authorization") String token, @PathVariable int companyId) throws CouponSystemException {
+    public ResponseEntity<?> getOneCompany(@RequestHeader(name = "Authorization") String token, @PathVariable int companyId) throws TokenException {
         if (jwTutil.validateToken(token)) {
             try {
                 return controllerUtil.responseEntityBuilder(token, adminService.getOneCompany(companyId), HttpStatus.OK);
@@ -133,7 +135,7 @@ public class AdminController {
      * @throws CouponSystemException
      */
     @PostMapping("addCustomer")
-    public ResponseEntity<?> addCustomer(@RequestHeader(name = "Authorization") String token, @RequestBody Customer customer) throws CouponSystemException {
+    public ResponseEntity<?> addCustomer(@RequestHeader(name = "Authorization") String token, @RequestBody Customer customer) throws TokenException {
         if (jwTutil.validateToken(token)) {
             try {
                 adminService.addCustomer(customer);
@@ -153,7 +155,7 @@ public class AdminController {
      * @throws CouponSystemException
      */
     @PostMapping("updateCustomer")
-    public ResponseEntity<?> updateCustomer(@RequestHeader(name = "Authorization") String token, @RequestBody Customer customer) throws CouponSystemException {
+    public ResponseEntity<?> updateCustomer(@RequestHeader(name = "Authorization") String token, @RequestBody Customer customer) throws TokenException {
         if (jwTutil.validateToken(token)) {
             try {
                 adminService.updateCustomer(customer);
@@ -173,7 +175,7 @@ public class AdminController {
      * @throws CouponSystemException
      */
     @DeleteMapping("deleteCustomer/{customerId}")
-    public ResponseEntity<?> deleteCustomer(@RequestHeader(name = "Authorization") String token, @PathVariable int customerId) throws CouponSystemException {
+    public ResponseEntity<?> deleteCustomer(@RequestHeader(name = "Authorization") String token, @PathVariable int customerId) throws TokenException {
         if (jwTutil.validateToken(token)) {
             try {
                 adminService.deleteCustomer(customerId);
@@ -189,10 +191,10 @@ public class AdminController {
      * gets all the customers in the system
      * @param token for validation
      * @return ResponseEntity
-     * @throws CouponSystemException
+     * @throws TokenException
      */
     @PostMapping("getAllCustomers")
-    public ResponseEntity<?> getAllCustomers(@RequestHeader(name = "Authorization") String token) throws CouponSystemException {
+    public ResponseEntity<?> getAllCustomers(@RequestHeader(name = "Authorization") String token) throws TokenException {
         if (jwTutil.validateToken(token)) {
             try {
                 return controllerUtil.responseEntityBuilder(token, adminService.getAllCustomers(), HttpStatus.OK);
@@ -211,7 +213,7 @@ public class AdminController {
      * @throws CouponSystemException
      */
     @PostMapping("getOneCustomer/{customerId}")
-    public ResponseEntity<?> getOneCustomer(@RequestHeader(name = "Authorization") String token, @PathVariable int customerId) throws CouponSystemException {
+    public ResponseEntity<?> getOneCustomer(@RequestHeader(name = "Authorization") String token, @PathVariable int customerId) throws TokenException {
         if (jwTutil.validateToken(token)) {
             try {
                 return controllerUtil.responseEntityBuilder(token, adminService.getOneCustomer(customerId), HttpStatus.OK);
@@ -219,7 +221,7 @@ public class AdminController {
                 return new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);
             }
         }
-        return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
+        return new ResponseEntity<>(SystemErrMsg.TOKEN_EXPIRED,HttpStatus.UNAUTHORIZED);
     }
 
 

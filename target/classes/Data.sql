@@ -1,12 +1,12 @@
 --alter the foreign key `coupons_id` in `coupondb`.`customer_coupons` to delete on cascade
 
-ALTER TABLE `coupondb`.`customer_coupons`
-DROP FOREIGN KEY `FK3ra7y4e2fu00kui0lby4mj0w1`;
-ALTER TABLE `coupondb`.`customer_coupons`
-ADD CONSTRAINT `FK3ra7y4e2fu00kui0lby4mj0w1`
-  FOREIGN KEY (`coupons_id`)
-  REFERENCES `coupondb`.`coupon` (`id`)
-  ON DELETE CASCADE;
+--ALTER TABLE `coupondb`.`customer_coupons`
+--DROP FOREIGN KEY `FK3ra7y4e2fu00kui0lby4mj0w1`;
+--ALTER TABLE `coupondb`.`customer_coupons`
+--ADD CONSTRAINT `FK3ra7y4e2fu00kui0lby4mj0w1`
+--  FOREIGN KEY (`coupons_id`)
+--  REFERENCES `coupondb`.`coupon` (`id`)
+--  ON DELETE CASCADE;
 
 
 -- alt option for creating

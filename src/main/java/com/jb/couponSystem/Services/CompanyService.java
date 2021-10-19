@@ -78,7 +78,7 @@ public class CompanyService extends ClientService {
      */
     public void deleteCoupon(int couponId) throws CouponSystemException {
         if (couponRepository.existsById(couponId) && couponRepository.existsByIdAndCompany_Id(couponId, this.companyId)) {
-           // couponRepository.deleteAllCouponPurchases(couponId);
+            couponRepository.deleteAllCouponPurchases(couponId);
             couponRepository.deleteCouponById(couponId);
         } else throw new CouponSystemException(SystemErrMsg.COUPON_NOT_EXIST);
     }

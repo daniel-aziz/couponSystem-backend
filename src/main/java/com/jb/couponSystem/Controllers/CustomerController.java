@@ -3,6 +3,8 @@ package com.jb.couponSystem.Controllers;
 
 import com.jb.couponSystem.Beans.Category;
 import com.jb.couponSystem.Exceptions.CouponSystemException;
+import com.jb.couponSystem.Exceptions.SystemErrMsg;
+import com.jb.couponSystem.Exceptions.TokenException;
 import com.jb.couponSystem.Services.CustomerService;
 import com.jb.couponSystem.Utils.ControllerUtil;
 import com.jb.couponSystem.Utils.JWTutil;
@@ -38,7 +40,7 @@ public class CustomerController {
      * @throws CouponSystemException
      */
     @PostMapping("purchaseCoupon/{id}")
-    public ResponseEntity<?> purchaseCoupon(@RequestHeader(name = "Authorization") String token, @PathVariable int id) throws CouponSystemException {
+    public ResponseEntity<?> purchaseCoupon(@RequestHeader(name = "Authorization") String token, @PathVariable int id) throws TokenException {
         if (jwTutil.validateToken(token)) {
             customerService.setCustomerId(jwTutil.extractUserId(token));
             try {
@@ -48,7 +50,7 @@ public class CustomerController {
                 return new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);
             }
         }
-        return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
+        return new ResponseEntity<>(SystemErrMsg.TOKEN_EXPIRED,HttpStatus.UNAUTHORIZED);
     }
 
     /**
@@ -59,7 +61,7 @@ public class CustomerController {
      * @throws CouponSystemException
      */
     @PostMapping("getAllCoupons/all")
-    public ResponseEntity<?> getCustomerCoupons(@RequestHeader(name = "Authorization") String token) throws CouponSystemException {
+    public ResponseEntity<?> getCustomerCoupons(@RequestHeader(name = "Authorization") String token) throws TokenException {
         if (jwTutil.validateToken(token)) {
             customerService.setCustomerId(jwTutil.extractUserId(token));
             try {
@@ -68,7 +70,7 @@ public class CustomerController {
                 return new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);
             }
         }
-        return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
+        return new ResponseEntity<>(SystemErrMsg.TOKEN_EXPIRED,HttpStatus.UNAUTHORIZED);
     }
 
     /**
@@ -80,7 +82,7 @@ public class CustomerController {
      * @throws CouponSystemException
      */
     @PostMapping("getAllCoupons/category/{category}")
-    public ResponseEntity<?> getCustomerCoupons(@RequestHeader(name = "Authorization") String token, @PathVariable Category category) throws CouponSystemException {
+    public ResponseEntity<?> getCustomerCoupons(@RequestHeader(name = "Authorization") String token, @PathVariable Category category) throws TokenException {
         if (jwTutil.validateToken(token)) {
             customerService.setCustomerId(jwTutil.extractUserId(token));
             try {
@@ -89,7 +91,7 @@ public class CustomerController {
                 return new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);
             }
         }
-        return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
+        return new ResponseEntity<>(SystemErrMsg.TOKEN_EXPIRED,HttpStatus.UNAUTHORIZED);
     }
 
 
@@ -102,7 +104,7 @@ public class CustomerController {
      */
     @Deprecated
     @GetMapping("getAllCoupons/price/{price}")
-    public ResponseEntity<?> getCustomerCoupons(@RequestHeader(name = "Authorization") String token, @PathVariable double price) throws CouponSystemException {
+    public ResponseEntity<?> getCustomerCoupons(@RequestHeader(name = "Authorization") String token, @PathVariable double price) throws TokenException {
         if (jwTutil.validateToken(token)) {
             customerService.setCustomerId(jwTutil.extractUserId(token));
             try {
@@ -111,7 +113,7 @@ public class CustomerController {
                 return new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);
             }
         }
-        return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
+        return new ResponseEntity<>(SystemErrMsg.TOKEN_EXPIRED,HttpStatus.UNAUTHORIZED);
     }
 
     /**
@@ -124,7 +126,7 @@ public class CustomerController {
      * @throws CouponSystemException
      */
     @PostMapping("getAllCoupons/price/{priceMin}/{priceMax}")
-    public ResponseEntity<?> getCustomerCoupons(@RequestHeader(name = "Authorization") String token, @PathVariable double priceMin, @PathVariable double priceMax) throws CouponSystemException {
+    public ResponseEntity<?> getCustomerCoupons(@RequestHeader(name = "Authorization") String token, @PathVariable double priceMin, @PathVariable double priceMax) throws TokenException {
         if (jwTutil.validateToken(token)) {
             customerService.setCustomerId(jwTutil.extractUserId(token));
             try {
@@ -133,7 +135,7 @@ public class CustomerController {
                 return new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);
             }
         }
-        return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
+        return new ResponseEntity<>(SystemErrMsg.TOKEN_EXPIRED,HttpStatus.UNAUTHORIZED);
     }
 
     /**
@@ -144,7 +146,7 @@ public class CustomerController {
      * @throws CouponSystemException
      */
     @PostMapping("getCustomerDetails")
-    public ResponseEntity<?> getCustomerDetails(@RequestHeader(name = "Authorization") String token) throws CouponSystemException {
+    public ResponseEntity<?> getCustomerDetails(@RequestHeader(name = "Authorization") String token) throws TokenException {
         if (jwTutil.validateToken(token)) {
             customerService.setCustomerId(jwTutil.extractUserId(token));
             try {
@@ -153,7 +155,7 @@ public class CustomerController {
                 return new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);
             }
         }
-        return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
+        return new ResponseEntity<>(SystemErrMsg.TOKEN_EXPIRED,HttpStatus.UNAUTHORIZED);
     }
 
 }

@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 import java.time.LocalDate;
 import java.util.List;
 
+
 @Service
 @AllArgsConstructor
 @NoArgsConstructor
@@ -118,4 +119,9 @@ public class CustomerService extends ClientService {
     public Customer getCustomerDetails() {
         return customerRepository.getById(this.getCustomerId());
     }
+
+
+
 }
+
+

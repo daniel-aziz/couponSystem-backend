@@ -3,6 +3,7 @@ package com.jb.couponSystem.Controllers;
 import com.jb.couponSystem.Beans.Category;
 import com.jb.couponSystem.Beans.Coupon;
 import com.jb.couponSystem.Exceptions.CouponSystemException;
+import com.jb.couponSystem.Exceptions.TokenException;
 import com.jb.couponSystem.Services.CompanyService;
 import com.jb.couponSystem.Utils.ControllerUtil;
 import com.jb.couponSystem.Utils.JWTutil;
@@ -34,7 +35,7 @@ public class CompanyController {
      * @throws CouponSystemException
      */
     @PostMapping("addCoupon")
-    public ResponseEntity<?> addCoupon(@RequestHeader(name = "Authorization") String token, @RequestBody Coupon coupon) throws CouponSystemException {
+    public ResponseEntity<?> addCoupon(@RequestHeader(name = "Authorization") String token, @RequestBody Coupon coupon) throws TokenException {
         if (jwTutil.validateToken(token)) {
             companyService.setCompanyId(jwTutil.extractUserId(token));
             try {
@@ -56,7 +57,7 @@ public class CompanyController {
      * @throws CouponSystemException
      */
     @PostMapping("getOneCoupon/{couponId}")
-    public ResponseEntity<?> getOneCoupon(@RequestHeader(name = "Authorization") String token, @PathVariable int couponId) throws CouponSystemException {
+    public ResponseEntity<?> getOneCoupon(@RequestHeader(name = "Authorization") String token, @PathVariable int couponId) throws TokenException {
         if (jwTutil.validateToken(token)) {
             companyService.setCompanyId(jwTutil.extractUserId(token));
             try {
@@ -77,7 +78,7 @@ public class CompanyController {
      * @throws CouponSystemException
      */
     @PostMapping("updateCoupon")
-    public ResponseEntity<?> updateCoupon(@RequestHeader(name = "Authorization") String token, @RequestBody Coupon coupon) throws CouponSystemException {
+    public ResponseEntity<?> updateCoupon(@RequestHeader(name = "Authorization") String token, @RequestBody Coupon coupon) throws TokenException {
         if (jwTutil.validateToken(token)) {
             companyService.setCompanyId(jwTutil.extractUserId(token));
             try {
@@ -99,7 +100,7 @@ public class CompanyController {
      * @throws CouponSystemException
      */
     @DeleteMapping("deleteCoupon/{couponId}")
-    public ResponseEntity<?> deleteCoupon(@RequestHeader(name = "Authorization") String token, @PathVariable int couponId) throws CouponSystemException {
+    public ResponseEntity<?> deleteCoupon(@RequestHeader(name = "Authorization") String token, @PathVariable int couponId) throws TokenException {
         if (jwTutil.validateToken(token)) {
             companyService.setCompanyId(jwTutil.extractUserId(token));
             try {
@@ -120,7 +121,7 @@ public class CompanyController {
      * @throws CouponSystemException
      */
     @PostMapping("getAllCoupons/all")
-    public ResponseEntity<?> getCompanyCoupons(@RequestHeader(name = "Authorization") String token) throws CouponSystemException {
+    public ResponseEntity<?> getCompanyCoupons(@RequestHeader(name = "Authorization") String token) throws TokenException {
         if (jwTutil.validateToken(token)) {
             companyService.setCompanyId(jwTutil.extractUserId(token));
             try {
@@ -141,7 +142,7 @@ public class CompanyController {
      * @throws CouponSystemException
      */
     @PostMapping("getAllCoupons/category/{category}")
-    public ResponseEntity<?> getCompanyCoupons(@RequestHeader(name = "Authorization") String token, @PathVariable Category category) throws CouponSystemException {
+    public ResponseEntity<?> getCompanyCoupons(@RequestHeader(name = "Authorization") String token, @PathVariable Category category) throws TokenException {
         if (jwTutil.validateToken(token)) {
             companyService.setCompanyId(jwTutil.extractUserId(token));
             try {
@@ -164,7 +165,7 @@ public class CompanyController {
      */
     @Deprecated
     @GetMapping("getAllCoupons/price/{price}")
-    public ResponseEntity<?> getCompanyCoupons(@RequestHeader(name = "Authorization") String token, @PathVariable double price) throws CouponSystemException {
+    public ResponseEntity<?> getCompanyCoupons(@RequestHeader(name = "Authorization") String token, @PathVariable double price) throws TokenException {
         if (jwTutil.validateToken(token)) {
             companyService.setCompanyId(jwTutil.extractUserId(token));
             try {
@@ -186,7 +187,7 @@ public class CompanyController {
      * @throws CouponSystemException
      */
     @PostMapping("getAllCoupons/price/{priceMin}/{priceMax}")
-    public ResponseEntity<?> getCompanyCoupons(@RequestHeader(name = "Authorization") String token, @PathVariable double priceMin, @PathVariable double priceMax) throws CouponSystemException {
+    public ResponseEntity<?> getCompanyCoupons(@RequestHeader(name = "Authorization") String token, @PathVariable double priceMin, @PathVariable double priceMax) throws TokenException {
         if (jwTutil.validateToken(token)) {
             companyService.setCompanyId(jwTutil.extractUserId(token));
             try {
@@ -207,7 +208,7 @@ public class CompanyController {
      * @throws CouponSystemException
      */
     @PostMapping("getCompanyDetails")
-    public ResponseEntity<?> getCompanyDetails(@RequestHeader(name = "Authorization") String token) throws CouponSystemException {
+    public ResponseEntity<?> getCompanyDetails(@RequestHeader(name = "Authorization") String token) throws TokenException {
         if (jwTutil.validateToken(token)) {
             companyService.setCompanyId(jwTutil.extractUserId(token));
             try {

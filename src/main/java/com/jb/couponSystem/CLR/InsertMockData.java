@@ -29,59 +29,59 @@ public class InsertMockData implements CommandLineRunner {
      * @return ArrayList of Companies
      */
     private ArrayList<Company> listOfCompanies() {
-        Company isrotel = Company.builder()
-                .name("Isrotel")
-                .email("isrotel@isrotel.com")
-                .password("isrotel1")
+        Company hotels = Company.builder()
+                .name("Hotels")
+                .email("hotels@hotels.com")
+                .password("hotels")
                 .build();
 
-        Company microsoft = Company.builder()
-                .name("Microsoft")
-                .email("microsoft@Microsoft.com")
-                .password("microsoft1")
+        Company microchip = Company.builder()
+                .name("Microchips")
+                .email("Microchips@Microchips.com")
+                .password("microchips")
                 .build();
 
-        Company johnbryce = Company.builder()
-                .name("John Bryce")
-                .email("johnbryce@johnbryce.com")
-                .password("johnbryce1")
+        Company jnj = Company.builder()
+                .name("John & John")
+                .email("jnj@jnj.com")
+                .password("jnj12")
                 .build();
 
-        Company intel = Company.builder()
-                .name("Intel")
-                .email("intel@intel.com")
-                .password("intel1")
+        Company intec = Company.builder()
+                .name("Intec")
+                .email("Intec@Intec.com")
+                .password("intec")
                 .build();
-        Company tesla = Company.builder()
-                .name("Tesla")
-                .email("tesla@tesla.com")
-                .password("tesla1")
+        Company telso = Company.builder()
+                .name("Telso")
+                .email("Telso@Telso.com")
+                .password("telso")
                 .build();
-        Company dell = Company.builder()
-                .name("Dell")
-                .email("dell@dell.com")
-                .password("dell1")
+        Company acoc = Company.builder()
+                .name("Acoc")
+                .email("Acoc@Acoc.com")
+                .password("acoc1")
                 .build();
-        Company samsung = Company.builder()
-                .name("Samsung")
-                .email("samsung@samsung.com")
-                .password("samsung1")
+        Company samson9 = Company.builder()
+                .name("Samson9")
+                .email("Samson9@Samson9.com")
+                .password("samson9")
                 .build();
-        Company apple = Company.builder()
-                .name("Apple")
-                .email("apple@apple.com")
-                .password("apple")
+        Company banana = Company.builder()
+                .name("Banana")
+                .email("Banana@Banana.com")
+                .password("banana")
                 .build();
 
         return new ArrayList<>() {{
-            add(isrotel);
-            add(microsoft);
-            add(johnbryce);
-            add(intel);
-            add(tesla);
-            add(dell);
-            add(samsung);
-            add(apple);
+            add(hotels); // id 1
+            add(microchip); // id 2
+            add(jnj); // id 3
+            add(intec); // id 4
+            add(telso); // id 5
+            add(acoc); // id 6
+            add(samson9); // id 7
+            add(banana); // id 8
         }};
     }
 
@@ -142,6 +142,12 @@ public class InsertMockData implements CommandLineRunner {
                 .email("yael@yael.com")
                 .password("yael1")
                 .build();
+        Customer sanji = Customer.builder()
+                .firstName("Sanji")
+                .lastName("Sanji")
+                .email("sanji@sanji.com")
+                .password("sanji1")
+                .build();
 
         return new ArrayList<>() {{
             add(daniel);
@@ -152,6 +158,7 @@ public class InsertMockData implements CommandLineRunner {
             add(nir);
             add(tamir);
             add(yael);
+            add(sanji);
         }};
     }
 
@@ -161,158 +168,158 @@ public class InsertMockData implements CommandLineRunner {
      * @return ArrayList of Coupons
      */
     private ArrayList<Coupon> listOfCoupons() {
-        Coupon automotive1 = Coupon.builder().company(Company.builder().id(1).build())
+        Coupon automotive1 = Coupon.builder().company(Company.builder().id(5).build())
                 .category(Category.Automotive)
-                .title("Automotive")
-                .description("Automotive")
-                .startDate(Date.valueOf("2021-07-01"))
+                .title("New Teslo Car")
+                .description("Buy online with 100% finance")
+                .startDate(Date.valueOf("2021-10-20"))
                 .endDate(Date.valueOf("2022-10-01"))
-                .amount(50)
-                .price(50)
-                .image("https://eu.backendlessappcontent.com/E4714048-7BC7-FEA1-FF1A-C2F2C6AC1800/C3D936DA-E96F-4015-BAAD-DE5217BDD0FA/files/img/hamburger.jpg")
+                .amount(5)
+                .price(25000)
+                .image("https://eu.backendlessappcontent.com/E4714048-7BC7-FEA1-FF1A-C2F2C6AC1800/C3D936DA-E96F-4015-BAAD-DE5217BDD0FA/files/img/mockDataImgs/toyota.jpg")
                 .build();
 
-        Coupon beauty1 = Coupon.builder().company(Company.builder().id(1).build())
+        Coupon beauty1 = Coupon.builder().company(Company.builder().id(6).build())
                 .category(Category.Beauty)
-                .title("Beauty")
-                .description("Beauty")
+                .title("Hand Lotion")
+                .description("Made for men, 50% Lotion, 50% Car Grease")
                 .startDate(Date.valueOf("2021-07-01"))
                 .endDate(Date.valueOf("2022-10-01"))
                 .amount(50)
-                .price(50)
-                .image("https://eu.backendlessappcontent.com/E4714048-7BC7-FEA1-FF1A-C2F2C6AC1800/C3D936DA-E96F-4015-BAAD-DE5217BDD0FA/files/img/nvidiaCard.jpg")
+                .price(15)
+                .image("https://eu.backendlessappcontent.com/E4714048-7BC7-FEA1-FF1A-C2F2C6AC1800/C3D936DA-E96F-4015-BAAD-DE5217BDD0FA/files/img/mockDataImgs/lotion.jpg")
                 .build();
 
-        Coupon clothing1 = Coupon.builder().company(Company.builder().id(2).build())
+        Coupon clothing1 = Coupon.builder().company(Company.builder().id(6).build())
                 .category(Category.Clothing)
-                .title("Clothing")
-                .description("Clothing")
+                .title("Blue Business Suit")
+                .description("Italian hand made suite from cotton")
                 .startDate(Date.valueOf("2021-07-01"))
                 .endDate(Date.valueOf("2022-10-01"))
-                .amount(50)
-                .price(50)
-                .image("img")
+                .amount(1000)
+                .price(450)
+                .image("https://eu.backendlessappcontent.com/E4714048-7BC7-FEA1-FF1A-C2F2C6AC1800/C3D936DA-E96F-4015-BAAD-DE5217BDD0FA/files/img/mockDataImgs/buissneceSuit.jpg")
                 .build();
 
         Coupon electronics1 = Coupon.builder().company(Company.builder().id(2).build())
                 .category(Category.Electronics)
-                .title("Electronics")
-                .description("Electronics")
+                .title("GeForce RTX 3060 TI")
+                .description("1 Day Delivery, 5 Years of insurance")
                 .startDate(Date.valueOf("2021-07-01"))
-                .endDate(Date.valueOf("2022-10-01"))
-                .amount(50)
-                .price(50)
-                .image("img")
+                .endDate(Date.valueOf("2025-10-01"))
+                .amount(15)
+                .price(1050)
+                .image("https://eu.backendlessappcontent.com/E4714048-7BC7-FEA1-FF1A-C2F2C6AC1800/C3D936DA-E96F-4015-BAAD-DE5217BDD0FA/files/img/mockDataImgs/nvidiaCard.jpg")
                 .build();
         Coupon entertainment1 = Coupon.builder().company(Company.builder().id(3).build())
                 .category(Category.Entertainment)
-                .title("Entertainment")
-                .description("Entertainment")
-                .startDate(Date.valueOf("2021-07-01"))
-                .endDate(Date.valueOf("2022-10-01"))
-                .amount(50)
-                .price(50)
-                .image("img")
+                .title("1 + 1 For Weekend Movies")
+                .description("Thursday - Saturday")
+                .startDate(Date.valueOf("2021-12-01"))
+                .endDate(Date.valueOf("2023-12-01"))
+                .amount(1000)
+                .price(15)
+                .image("https://eu.backendlessappcontent.com/E4714048-7BC7-FEA1-FF1A-C2F2C6AC1800/C3D936DA-E96F-4015-BAAD-DE5217BDD0FA/files/img/mockDataImgs/movieTheater.jpg")
                 .build();
-        Coupon financial1 = Coupon.builder().company(Company.builder().id(3).build())
+        Coupon financial1 = Coupon.builder().company(Company.builder().id(4).build())
                 .category(Category.Financial)
-                .title("Financial")
-                .description("Financial")
+                .title("Financial Counseling")
+                .description("Financial counseling for new Families")
                 .startDate(Date.valueOf("2021-07-01"))
                 .endDate(Date.valueOf("2022-10-01"))
                 .amount(50)
-                .price(50)
-                .image("img")
+                .price(100)
+                .image("https://eu.backendlessappcontent.com/E4714048-7BC7-FEA1-FF1A-C2F2C6AC1800/C3D936DA-E96F-4015-BAAD-DE5217BDD0FA/files/img/mockDataImgs/FinancialCounseling.jpg")
                 .build();
-        Coupon fitness1 = Coupon.builder().company(Company.builder().id(4).build())
+        Coupon fitness1 = Coupon.builder().company(Company.builder().id(8).build())
                 .category(Category.Fitness)
-                .title("Fitness")
-                .description("Fitness")
+                .title("Running Machine")
+                .description("Mid size running machine, for all ages")
                 .startDate(Date.valueOf("2021-07-01"))
                 .endDate(Date.valueOf("2022-10-01"))
-                .amount(50)
-                .price(50)
-                .image("img")
+                .amount(85)
+                .price(575)
+                .image("https://eu.backendlessappcontent.com/E4714048-7BC7-FEA1-FF1A-C2F2C6AC1800/C3D936DA-E96F-4015-BAAD-DE5217BDD0FA/files/img/mockDataImgs/runningMachine.jpg")
                 .build();
-        Coupon food1 = Coupon.builder().company(Company.builder().id(4).build())
+        Coupon food1 = Coupon.builder().company(Company.builder().id(3).build())
                 .category(Category.Food)
-                .title("Food")
-                .description("Food")
+                .title("Dinner in a 3 Michelin Star restaurant")
+                .description("2 persons full course dinner at Moyka")
                 .startDate(Date.valueOf("2021-07-01"))
                 .endDate(Date.valueOf("2022-10-01"))
-                .amount(50)
-                .price(50)
-                .image("img")
+                .amount(20)
+                .price(250)
+                .image("https://eu.backendlessappcontent.com/E4714048-7BC7-FEA1-FF1A-C2F2C6AC1800/C3D936DA-E96F-4015-BAAD-DE5217BDD0FA/files/img/mockDataImgs/resturant.jpg")
                 .build();
         Coupon garden1 = Coupon.builder().company(Company.builder().id(5).build())
                 .category(Category.Garden)
-                .title("Garden")
-                .description("Garden")
+                .title("Renovate your garden")
+                .description("Full Renovation including furniture, Price can range")
                 .startDate(Date.valueOf("2021-07-01"))
                 .endDate(Date.valueOf("2022-10-01"))
-                .amount(50)
-                .price(50)
-                .image("img")
+                .amount(20)
+                .price(25000)
+                .image("https://eu.backendlessappcontent.com/E4714048-7BC7-FEA1-FF1A-C2F2C6AC1800/C3D936DA-E96F-4015-BAAD-DE5217BDD0FA/files/img/mockDataImgs/garden.jpg")
                 .build();
         Coupon general1 = Coupon.builder().company(Company.builder().id(5).build())
                 .category(Category.General)
-                .title("General")
-                .description("General")
+                .title("50% Discount on all items")
+                .description("All store in the country")
                 .startDate(Date.valueOf("2021-07-01"))
                 .endDate(Date.valueOf("2022-10-01"))
-                .amount(50)
-                .price(50)
-                .image("img")
+                .amount(5000)
+                .price(1)
+                .image("https://eu.backendlessappcontent.com/E4714048-7BC7-FEA1-FF1A-C2F2C6AC1800/C3D936DA-E96F-4015-BAAD-DE5217BDD0FA/files/img/mockDataImgs/applianceStore.jpg")
                 .build();
         Coupon gifts1 = Coupon.builder().company(Company.builder().id(6).build())
                 .category(Category.Gifts)
-                .title("Gifts")
-                .description("Gifts")
+                .title("Iphone 13")
+                .description("Gifts & More")
                 .startDate(Date.valueOf("2021-07-01"))
                 .endDate(Date.valueOf("2022-10-01"))
-                .amount(50)
-                .price(50)
-                .image("img")
+                .amount(0)
+                .price(600)
+                .image("https://eu.backendlessappcontent.com/E4714048-7BC7-FEA1-FF1A-C2F2C6AC1800/C3D936DA-E96F-4015-BAAD-DE5217BDD0FA/files/img/mockDataImgs/iphone.jpg")
                 .build();
-        Coupon health1 = Coupon.builder().company(Company.builder().id(6).build())
+        Coupon health1 = Coupon.builder().company(Company.builder().id(7).build())
                 .category(Category.Health)
-                .title("Health")
-                .description("Health")
+                .title("Health Watch")
+                .description("Health Watch Men/Women")
                 .startDate(Date.valueOf("2021-07-01"))
                 .endDate(Date.valueOf("2022-10-01"))
-                .amount(50)
-                .price(50)
-                .image("img")
+                .amount(2000)
+                .price(150)
+                .image("https://eu.backendlessappcontent.com/E4714048-7BC7-FEA1-FF1A-C2F2C6AC1800/C3D936DA-E96F-4015-BAAD-DE5217BDD0FA/files/img/mockDataImgs/healthWatch.jpg")
                 .build();
-        Coupon home1 = Coupon.builder().company(Company.builder().id(7).build())
+        Coupon home1 = Coupon.builder().company(Company.builder().id(3).build())
                 .category(Category.Home)
-                .title("Home")
-                .description("Home")
+                .title("Living room Sofa")
+                .description("Best fabric in the world")
                 .startDate(Date.valueOf("2021-07-01"))
                 .endDate(Date.valueOf("2022-10-01"))
-                .amount(50)
-                .price(50)
-                .image("img")
+                .amount(200)
+                .price(1575)
+                .image("https://eu.backendlessappcontent.com/E4714048-7BC7-FEA1-FF1A-C2F2C6AC1800/C3D936DA-E96F-4015-BAAD-DE5217BDD0FA/files/img/mockDataImgs/sofa.jpg")
                 .build();
         Coupon jewelry1 = Coupon.builder().company(Company.builder().id(7).build())
                 .category(Category.Jewelry)
-                .title("Jewelry")
-                .description("Jewelry")
+                .title("Wedding Rings")
+                .description("Diamond Only")
                 .startDate(Date.valueOf("2021-07-01"))
                 .endDate(Date.valueOf("2022-10-01"))
-                .amount(50)
-                .price(50)
-                .image("img")
+                .amount(150)
+                .price(3550)
+                .image("https://eu.backendlessappcontent.com/E4714048-7BC7-FEA1-FF1A-C2F2C6AC1800/C3D936DA-E96F-4015-BAAD-DE5217BDD0FA/files/img/mockDataImgs/rings.jpg")
                 .build();
-        Coupon travel1 = Coupon.builder().company(Company.builder().id(8).build())
+        Coupon travel1 = Coupon.builder().company(Company.builder().id(1).build())
                 .category(Category.Travel)
-                .title("Travel")
-                .description("Travel")
+                .title("3 nights in Rome")
+                .description("City Center, 5 Start Hotel, Including Breakfast")
                 .startDate(Date.valueOf("2021-07-01"))
                 .endDate(Date.valueOf("2022-10-01"))
-                .amount(50)
-                .price(50)
-                .image("img")
+                .amount(1000)
+                .price(1500)
+                .image("https://eu.backendlessappcontent.com/E4714048-7BC7-FEA1-FF1A-C2F2C6AC1800/C3D936DA-E96F-4015-BAAD-DE5217BDD0FA/files/img/mockDataImgs/rome.jpg")
                 .build();
 
 

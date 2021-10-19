@@ -39,6 +39,6 @@ public interface CompanyRepository extends JpaRepository<Company, Integer> {
      * @param email
      * @return int id
      */
-    @Query(value = "SELECT `id` FROM `couponDB`.`company` WHERE `email`=?1", nativeQuery = true)
+    @Query(value = "SELECT id FROM couponDB.company WHERE email=?1", nativeQuery = true)
     int findIdByEmail(String email);
 }

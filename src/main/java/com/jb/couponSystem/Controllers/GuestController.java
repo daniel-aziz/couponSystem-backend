@@ -1,9 +1,11 @@
 package com.jb.couponSystem.Controllers;
 
 import com.jb.couponSystem.Beans.Category;
+import com.jb.couponSystem.Beans.ContactDetails;
 import com.jb.couponSystem.Beans.Customer;
 import com.jb.couponSystem.Beans.UserDetails;
 import com.jb.couponSystem.Exceptions.CouponSystemException;
+import com.jb.couponSystem.Exceptions.TokenException;
 import com.jb.couponSystem.LoginManager.LoginManager;
 import com.jb.couponSystem.Services.GuestService;
 import com.jb.couponSystem.Utils.ControllerUtil;
@@ -38,8 +40,8 @@ public class GuestController {
         try {
             String token = loginManager.login(userDetails.getEmail(), userDetails.getPassword(), userDetails.getClientType());
             return controllerUtil.responseEntityBuilder(token, null,HttpStatus.OK);
-        } catch (CouponSystemException e) {
-            return new ResponseEntity<>(e.getMessage(), HttpStatus.UNAUTHORIZED);
+        } catch (CouponSystemException | TokenException e) {
+            return new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);
         }
     }
 
@@ -111,5 +113,19 @@ public class GuestController {
     @GetMapping("getAllCategories")
     public ResponseEntity<?> getAllCategories() {
         return new ResponseEntity<>(guestService.getAllCategories(),HttpStatus.OK);
+    }
+
+    /**
+     * Send an email to admin from website via contact form
+     * @return
+     */
+    @PostMapping("contactUs")
+    public ResponseEntity<?> contactAdmin(@RequestBody ContactDetails contactDetails) {
+        try {
+            guestService.contactAdmin(contactDetails);
+            return new ResponseEntity<>(HttpStatus.ACCEPTED);
+        } catch (CouponSystemException e) {
+            return new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);
+        }
     }
 }

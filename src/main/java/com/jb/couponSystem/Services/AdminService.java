@@ -77,13 +77,11 @@ public class AdminService extends ClientService {
      */
     public void deleteCompany(int companyId) throws CouponSystemException {
         if (companyRepository.existsById(companyId)) {
-            /*
+
             Company company = companyRepository.getById(companyId);
             for (Coupon item: company.getCoupons()) {
                 couponRepository.deleteAllCouponPurchases(item.getId());
             }
-            */
-
             companyRepository.deleteById(companyId);
         } else throw new CouponSystemException(SystemErrMsg.COMPANY_NOT_EXIST);
     }

@@ -3,6 +3,7 @@ package com.jb.couponSystem.Utils;
 import com.jb.couponSystem.Beans.UserDetails;
 import com.jb.couponSystem.Exceptions.SystemErrMsg;
 import com.jb.couponSystem.Exceptions.CouponSystemException;
+import com.jb.couponSystem.Exceptions.TokenException;
 import com.jb.couponSystem.LoginManager.ClientType;
 import io.jsonwebtoken.*;
 import lombok.*;
@@ -39,7 +40,7 @@ public class JWTutil {
     private Key decodedSecretKey = new SecretKeySpec(Base64.getDecoder().decode(encodedSecretKey), signatureAlgorithm);
 
     // Sets the Expiration time of the token (Minutes)
-    private final int EXPIRATION_TIME = 30;
+    private final int EXPIRATION_TIME = 1;
 
     // METHODS
 
@@ -84,17 +85,17 @@ public class JWTutil {
      * @return Claims
      * @throws CouponSystemException
      */
-    private Claims extractAllClaims(String token) throws CouponSystemException {
+    private Claims extractAllClaims(String token) throws TokenException {
         try {
             JwtParser jwtParser = Jwts.parserBuilder().setSigningKey(this.decodedSecretKey).build();
             if (jwtParser == null) return null;
             else return jwtParser.parseClaimsJws(token).getBody();
         } catch (ExpiredJwtException err) {
-            throw new CouponSystemException(SystemErrMsg.TOKEN_EXPIRED);
+            throw new TokenException(SystemErrMsg.TOKEN_EXPIRED);
         } catch (NullPointerException err) {
-            throw new CouponSystemException(SystemErrMsg.TOKEN_INVALID);
+            throw new TokenException(SystemErrMsg.TOKEN_INVALID);
         } catch (Exception err) {
-            throw new CouponSystemException(SystemErrMsg.GENERAL);
+            throw new TokenException(SystemErrMsg.GENERAL);
         }
     }
 
@@ -105,11 +106,11 @@ public class JWTutil {
      * @return String email
      * @throws CouponSystemException
      */
-    public String extractEmail(String token) throws CouponSystemException {
+    public String extractEmail(String token) throws TokenException {
         try {
             return extractAllClaims(getCleanToken(token)).getSubject();
         } catch (Exception err) {
-            throw new CouponSystemException(SystemErrMsg.UNAUTHORIZED);
+            throw new TokenException(SystemErrMsg.UNAUTHORIZED);
         }
 
     }
@@ -121,11 +122,11 @@ public class JWTutil {
      * @return int clientId
      * @throws CouponSystemException
      */
-    public int extractUserId(String token) throws CouponSystemException {
+    public int extractUserId(String token) throws TokenException {
         try {
             return ((int) extractAllClaims(getCleanToken(token)).get("userId"));
         } catch (Exception err) {
-            throw new CouponSystemException(SystemErrMsg.UNAUTHORIZED);
+            throw new TokenException(SystemErrMsg.UNAUTHORIZED);
         }
 
     }
@@ -138,11 +139,11 @@ public class JWTutil {
      * @return ClientType
      * @throws CouponSystemException
      */
-    public ClientType extractClientType(String token) throws CouponSystemException {
+    public ClientType extractClientType(String token) throws TokenException {
         try {
             return ClientType.valueOf(extractAllClaims(getCleanToken(token)).get("userType").toString());
         } catch (Exception err) {
-            throw new CouponSystemException(SystemErrMsg.UNAUTHORIZED);
+            throw new TokenException(SystemErrMsg.UNAUTHORIZED);
         }
     }
 
@@ -157,7 +158,7 @@ public class JWTutil {
         try {
             extractAllClaims(token);
             return false;
-        } catch (CouponSystemException e) {
+        } catch (TokenException e) {
             return true;
         }
     }
@@ -173,7 +174,7 @@ public class JWTutil {
     public boolean isClientInvalidate(String token, int clientId) {
         try {
             return extractUserId(token) != clientId;
-        } catch (CouponSystemException e) {
+        } catch (TokenException e) {
             return true;
         }
     }
@@ -185,8 +186,8 @@ public class JWTutil {
      * @return boolean
      * @throws CouponSystemException
      */
-    public boolean validateToken(String token) throws CouponSystemException {
-        if (isTokenExpired(getCleanToken(token))) throw new CouponSystemException(SystemErrMsg.TOKEN_EXPIRED);
+    public boolean validateToken(String token) throws TokenException {
+        if (isTokenExpired(getCleanToken(token))) throw new TokenException(SystemErrMsg.TOKEN_EXPIRED);
         else return true;
     }
 

@@ -2,6 +2,7 @@ package com.jb.couponSystem.LoginManager;
 
 import com.jb.couponSystem.Beans.UserDetails;
 import com.jb.couponSystem.Exceptions.CouponSystemException;
+import com.jb.couponSystem.Exceptions.TokenException;
 import com.jb.couponSystem.Services.AdminService;
 import com.jb.couponSystem.Services.CompanyService;
 import com.jb.couponSystem.Services.CustomerService;
@@ -33,22 +34,22 @@ public class LoginManager {
      * @return string of token
      * @throws CouponSystemException thrown if user entered credentials/type is incorrect
      */
-    public String login(String email, String password, ClientType clientType) throws CouponSystemException {
+    public String login(String email, String password, ClientType clientType) throws TokenException {
         switch (clientType) {
             case ADMIN:
                 if (adminService.login(email.toLowerCase(), password)) {
                     return jwTutil.generateToken(new UserDetails(email, clientType, adminService.getId()));
-                } else throw new CouponSystemException(SystemErrMsg.BAD_CREDENTIALS);
+                } else throw new TokenException(SystemErrMsg.BAD_CREDENTIALS);
             case COMPANY:
                 if (companyService.login(email.toLowerCase(), password)) {
                     return jwTutil.generateToken(new UserDetails(email, clientType, companyService.getCompanyId()));
-                } else throw new CouponSystemException(SystemErrMsg.BAD_CREDENTIALS);
+                } else throw new TokenException(SystemErrMsg.BAD_CREDENTIALS);
             case CUSTOMER:
                 if (customerService.login(email.toLowerCase(), password)) {
                     return jwTutil.generateToken(new UserDetails(email, clientType, customerService.getCustomerId()));
-                } else throw new CouponSystemException(SystemErrMsg.BAD_CREDENTIALS);
+                } else throw new TokenException(SystemErrMsg.BAD_CREDENTIALS);
             default:
-                throw new CouponSystemException(SystemErrMsg.BAD_USER_TYPE);
+                throw new TokenException(SystemErrMsg.BAD_USER_TYPE);
         }
     }
 }

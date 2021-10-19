@@ -2,6 +2,7 @@ package com.jb.couponSystem.Utils;
 
 import com.jb.couponSystem.Beans.UserDetails;
 import com.jb.couponSystem.Exceptions.CouponSystemException;
+import com.jb.couponSystem.Exceptions.TokenException;
 import com.sun.istack.NotNull;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -26,7 +27,7 @@ public class ControllerUtil {
      * @return
      * @throws CouponSystemException
      */
-    public ResponseEntity<?> responseEntityBuilder(@NotNull String token, @Nullable Object body, @NotNull HttpStatus status) throws CouponSystemException {
+    public ResponseEntity<?> responseEntityBuilder(@NotNull String token, @Nullable Object body, @NotNull HttpStatus status) throws CouponSystemException,TokenException {
         UserDetails user = new UserDetails(jwTutil.extractEmail(token), jwTutil.extractClientType(token), jwTutil.extractUserId(token));
         switch (status) {
             case OK:
