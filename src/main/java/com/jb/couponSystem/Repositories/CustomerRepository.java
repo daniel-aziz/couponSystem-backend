@@ -38,7 +38,7 @@ public interface CustomerRepository extends JpaRepository<Customer, Integer> {
      * @param email
      * @return int id
      */
-    @Query(value = "SELECT id FROM couponDB.customer WHERE email=?1", nativeQuery = true)
+    @Query(value = "SELECT id FROM customer WHERE email=?1", nativeQuery = true)
     // SELECT id FROM couponDB.customer WHERE email=?1
     int findIdByEmail(String email);
 

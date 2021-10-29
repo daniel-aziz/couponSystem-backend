@@ -102,9 +102,9 @@ public interface CouponRepository extends JpaRepository<Coupon, Integer> {
      * @param category
      * @return List of coupons
      */
-    @Query(value = "SELECT couponDB.coupon.* FROM couponDB.coupon " +
-            "JOIN couponDB.customer_coupons ON (couponDB.coupon.id = couponDB.customer_coupons.COUPONS_ID) " +
-            "WHERE couponDB.customer_coupons.CUSTOMER_ID = ?1 AND couponDB.coupon.CATEGORY = ?2"
+    @Query(value = "SELECT coupon.* FROM coupon " +
+            "JOIN customer_coupons ON (coupon.id = customer_coupons.COUPONS_ID) " +
+            "WHERE customer_coupons.customer_id = ?1 AND coupon.category = ?2"
             , nativeQuery = true)
     List<Coupon> getAllCouponsOfCustomerAndCategory(int customer_id, String category);
 
@@ -116,9 +116,9 @@ public interface CouponRepository extends JpaRepository<Coupon, Integer> {
      * @param price
      * @return List of coupons
      */
-    @Query(value = "SELECT couponDB.coupon.* FROM couponDB.coupon " +
-            "JOIN couponDB.customer_coupons ON (couponDB.coupon.id = couponDB.customer_coupons.COUPONS_ID) " +
-            "WHERE couponDB.customer_coupons.CUSTOMER_ID = ?1 AND couponDB.coupon.Price <= ?2"
+    @Query(value = "SELECT coupon.* FROM coupon " +
+            "JOIN customer_coupons ON (coupon.id = customer_coupons.coupons_id) " +
+            "WHERE customer_coupons.customer_id = ?1 AND coupon.Price <= ?2"
             , nativeQuery = true)
     List<Coupon> getAllCouponsOfCustomerAndPrice(int customer_id, double price);
 
@@ -130,9 +130,9 @@ public interface CouponRepository extends JpaRepository<Coupon, Integer> {
      * @param priceMax
      * @return List of coupons
      */
-    @Query(value = "SELECT couponDB.coupon.* FROM couponDB.coupon " +
-            "JOIN couponDB.customer_coupons ON (couponDB.coupon.id = couponDB.customer_coupons.COUPONS_ID) " +
-            "WHERE couponDB.customer_coupons.CUSTOMER_ID = ?1 AND (couponDB.coupon.Price BETWEEN ?2 AND ?3)"
+    @Query(value = "SELECT coupon.* FROM coupon " +
+            "JOIN customer_coupons ON (coupon.id = customer_coupons.coupons_id) " +
+            "WHERE customer_coupons.customer_id = ?1 AND (coupon.Price BETWEEN ?2 AND ?3)"
             , nativeQuery = true)
     List<Coupon> getAllCouponsOfCustomerAndPriceBetween(int customer_id, double priceMin, double priceMax);
 
@@ -159,7 +159,7 @@ public interface CouponRepository extends JpaRepository<Coupon, Integer> {
      * @param coupons_id
      * @return Map<Integer, Integer>
      */
-    @Query(value = "SELECT * FROM couponDB.customer_coupons WHERE CUSTOMER_ID=?1 AND COUPONS_ID=?2", nativeQuery = true)
+    @Query(value = "SELECT * FROM customer_coupons WHERE customer_id=?1 AND coupons_id=?2", nativeQuery = true)
     Map<Integer, Integer> isCouponPurchased(int customer_id, int coupons_id);
 
     /**
@@ -167,7 +167,7 @@ public interface CouponRepository extends JpaRepository<Coupon, Integer> {
      */
     @Transactional
     @Modifying
-    @Query(value = "DELETE FROM couponDB.coupon WHERE END_DATE < current_date()", nativeQuery = true)
+    @Query(value = "DELETE FROM coupon WHERE end_date < current_date()", nativeQuery = true)
     void deleteExpiredCoupons();
 
     /**
@@ -176,7 +176,7 @@ public interface CouponRepository extends JpaRepository<Coupon, Integer> {
      */
     @Transactional
     @Modifying
-    @Query(value = "DELETE FROM couponDB.coupon WHERE ID=?1", nativeQuery = true)
+    @Query(value = "DELETE FROM coupon WHERE id=?1", nativeQuery = true)
     void deleteCouponById(int id);
 
     /**
@@ -194,19 +194,19 @@ public interface CouponRepository extends JpaRepository<Coupon, Integer> {
      */
     @Transactional
     @Modifying
-    @Query(value = "DELETE FROM couponDB.customer_coupons WHERE CUSTOMER_ID=?1 AND COUPONS_ID=?2", nativeQuery = true)
+    @Query(value = "DELETE FROM customer_coupons WHERE customer_id=?1 AND coupons_id=?2", nativeQuery = true)
     void deleteOneCouponPurchase(int customer_id, int coupons_id);
 
     @Transactional
     @Modifying
-    @Query(value = "DELETE couponDB.coupon.* FROM couponDB.coupon " +
-            "JOIN couponDB.customer_coupons ON (couponDB.coupon.id = couponDB.customer_coupons.COUPONS_ID)" +
-            "WHERE couponDB.customer_coupons.CUSTOMER_ID = ?1 ", nativeQuery = true)
+    @Query(value = "DELETE coupon.* FROM coupon " +
+            "JOIN customer_coupons ON (coupon.id = customer_coupons.coupons_id)" +
+            "WHERE customer_coupons.customer_id = ?1 ", nativeQuery = true)
     void deleteAllCustomerPurchases(int customer_id);
 
     @Transactional
     @Modifying
-    @Query(value = "DELETE FROM couponDB.customer_coupons " +
-            "WHERE couponDB.customer_coupons.COUPONS_ID = ?1", nativeQuery = true)
+    @Query(value = "DELETE FROM customer_coupons " +
+            "WHERE customer_coupons.coupons_id = ?1", nativeQuery = true)
     void deleteAllCouponPurchases(int coupons_id);
 }
