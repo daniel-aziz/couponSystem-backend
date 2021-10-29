@@ -40,7 +40,7 @@ public class JWTutil {
     private Key decodedSecretKey = new SecretKeySpec(Base64.getDecoder().decode(encodedSecretKey), signatureAlgorithm);
 
     // Sets the Expiration time of the token (Minutes)
-    private final int EXPIRATION_TIME = 1;
+    private final int EXPIRATION_TIME = 30;
 
     // METHODS
 
