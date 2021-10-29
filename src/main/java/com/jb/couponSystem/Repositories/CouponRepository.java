@@ -89,9 +89,9 @@ public interface CouponRepository extends JpaRepository<Coupon, Integer> {
      * @param customer_id
      * @return List of coupons
      */
-    @Query(value = "SELECT couponDB.coupon.* FROM couponDB.coupon " +
-            "JOIN couponDB.customer_coupons ON (couponDB.coupon.id = couponDB.customer_coupons.COUPONS_ID) " +
-            "WHERE couponDB.customer_coupons.CUSTOMER_ID = ?1", nativeQuery = true)
+    @Query(value = "SELECT coupon.* FROM coupon " +
+            "JOIN customer_coupons ON (coupon.id = customer_coupons.coupons_id) " +
+            "WHERE customer_coupons.customer_id = ?1", nativeQuery = true)
     List<Coupon> getAllCouponsOfCustomer(int customer_id);
 
 
