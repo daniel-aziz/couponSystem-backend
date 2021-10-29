@@ -16,7 +16,7 @@ import java.sql.Date;
 @NoArgsConstructor
 @Builder
 @Data
-@Table(name = "coupon")
+@Table(name = "coupon", schema = "coupondb")
 public class Coupon {
 
     // FIELDS

@@ -16,7 +16,7 @@ import java.util.List;
 @NoArgsConstructor
 @Builder
 @Data
-@Table(name = "customer")
+@Table(name = "customer", schema = "coupondb")
 public class Customer {
     // FIELDS
 
