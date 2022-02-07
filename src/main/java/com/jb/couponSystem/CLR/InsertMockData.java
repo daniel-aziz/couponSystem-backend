@@ -176,7 +176,7 @@ public class InsertMockData implements CommandLineRunner {
                 .endDate(Date.valueOf("2022-10-01"))
                 .amount(5)
                 .price(25000)
-                .image("https://eu.backendlessappcontent.com/E4714048-7BC7-FEA1-FF1A-C2F2C6AC1800/C3D936DA-E96F-4015-BAAD-DE5217BDD0FA/files/img/mockDataImgs/toyota.jpg")
+                .image("https://i.ibb.co/JkkhTvQ/toyota.jpg")
                 .build();
 
         Coupon beauty1 = Coupon.builder().company(Company.builder().id(6).build())
@@ -187,7 +187,7 @@ public class InsertMockData implements CommandLineRunner {
                 .endDate(Date.valueOf("2022-10-01"))
                 .amount(50)
                 .price(15)
-                .image("https://eu.backendlessappcontent.com/E4714048-7BC7-FEA1-FF1A-C2F2C6AC1800/C3D936DA-E96F-4015-BAAD-DE5217BDD0FA/files/img/mockDataImgs/lotion.jpg")
+                .image("https://i.ibb.co/L01gTRw/lotion.jpg")
                 .build();
 
         Coupon clothing1 = Coupon.builder().company(Company.builder().id(6).build())
@@ -198,7 +198,7 @@ public class InsertMockData implements CommandLineRunner {
                 .endDate(Date.valueOf("2022-10-01"))
                 .amount(1000)
                 .price(450)
-                .image("https://eu.backendlessappcontent.com/E4714048-7BC7-FEA1-FF1A-C2F2C6AC1800/C3D936DA-E96F-4015-BAAD-DE5217BDD0FA/files/img/mockDataImgs/buissneceSuit.jpg")
+                .image("https://i.ibb.co/mFrYsQQ/buissnece-Suit.jpg")
                 .build();
 
         Coupon electronics1 = Coupon.builder().company(Company.builder().id(2).build())
@@ -209,7 +209,7 @@ public class InsertMockData implements CommandLineRunner {
                 .endDate(Date.valueOf("2025-10-01"))
                 .amount(15)
                 .price(1050)
-                .image("https://eu.backendlessappcontent.com/E4714048-7BC7-FEA1-FF1A-C2F2C6AC1800/C3D936DA-E96F-4015-BAAD-DE5217BDD0FA/files/img/mockDataImgs/nvidiaCard.jpg")
+                .image("https://i.ibb.co/NTxFCJK/nvidia-Card.jpg")
                 .build();
         Coupon entertainment1 = Coupon.builder().company(Company.builder().id(3).build())
                 .category(Category.Entertainment)
@@ -219,7 +219,7 @@ public class InsertMockData implements CommandLineRunner {
                 .endDate(Date.valueOf("2023-12-01"))
                 .amount(1000)
                 .price(15)
-                .image("https://eu.backendlessappcontent.com/E4714048-7BC7-FEA1-FF1A-C2F2C6AC1800/C3D936DA-E96F-4015-BAAD-DE5217BDD0FA/files/img/mockDataImgs/movieTheater.jpg")
+                .image("https://i.ibb.co/Hxx0ZK3/movie-Theater.jpg")
                 .build();
         Coupon financial1 = Coupon.builder().company(Company.builder().id(4).build())
                 .category(Category.Financial)
@@ -229,7 +229,7 @@ public class InsertMockData implements CommandLineRunner {
                 .endDate(Date.valueOf("2022-10-01"))
                 .amount(50)
                 .price(100)
-                .image("https://eu.backendlessappcontent.com/E4714048-7BC7-FEA1-FF1A-C2F2C6AC1800/C3D936DA-E96F-4015-BAAD-DE5217BDD0FA/files/img/mockDataImgs/FinancialCounseling.jpg")
+                .image("https://i.ibb.co/Nr9LMVs/Financial-Counseling.jpg")
                 .build();
         Coupon fitness1 = Coupon.builder().company(Company.builder().id(8).build())
                 .category(Category.Fitness)
@@ -239,7 +239,7 @@ public class InsertMockData implements CommandLineRunner {
                 .endDate(Date.valueOf("2022-10-01"))
                 .amount(85)
                 .price(575)
-                .image("https://eu.backendlessappcontent.com/E4714048-7BC7-FEA1-FF1A-C2F2C6AC1800/C3D936DA-E96F-4015-BAAD-DE5217BDD0FA/files/img/mockDataImgs/runningMachine.jpg")
+                .image("https://i.ibb.co/j63V8Hh/running-Machine.jpg")
                 .build();
         Coupon food1 = Coupon.builder().company(Company.builder().id(3).build())
                 .category(Category.Food)
@@ -249,7 +249,7 @@ public class InsertMockData implements CommandLineRunner {
                 .endDate(Date.valueOf("2022-10-01"))
                 .amount(20)
                 .price(250)
-                .image("https://eu.backendlessappcontent.com/E4714048-7BC7-FEA1-FF1A-C2F2C6AC1800/C3D936DA-E96F-4015-BAAD-DE5217BDD0FA/files/img/mockDataImgs/resturant.jpg")
+                .image("https://i.ibb.co/LZ88Ppk/resturant.jpg")
                 .build();
         Coupon garden1 = Coupon.builder().company(Company.builder().id(5).build())
                 .category(Category.Garden)
@@ -259,7 +259,7 @@ public class InsertMockData implements CommandLineRunner {
                 .endDate(Date.valueOf("2022-10-01"))
                 .amount(20)
                 .price(25000)
-                .image("https://eu.backendlessappcontent.com/E4714048-7BC7-FEA1-FF1A-C2F2C6AC1800/C3D936DA-E96F-4015-BAAD-DE5217BDD0FA/files/img/mockDataImgs/garden.jpg")
+                .image("https://i.ibb.co/Pz8zMZD/garden.jpg")
                 .build();
         Coupon general1 = Coupon.builder().company(Company.builder().id(5).build())
                 .category(Category.General)
@@ -269,7 +269,7 @@ public class InsertMockData implements CommandLineRunner {
                 .endDate(Date.valueOf("2022-10-01"))
                 .amount(5000)
                 .price(1)
-                .image("https://eu.backendlessappcontent.com/E4714048-7BC7-FEA1-FF1A-C2F2C6AC1800/C3D936DA-E96F-4015-BAAD-DE5217BDD0FA/files/img/mockDataImgs/applianceStore.jpg")
+                .image("https://i.ibb.co/M57Vqj9/appliance-Store.jpg")
                 .build();
         Coupon gifts1 = Coupon.builder().company(Company.builder().id(6).build())
                 .category(Category.Gifts)
@@ -279,7 +279,7 @@ public class InsertMockData implements CommandLineRunner {
                 .endDate(Date.valueOf("2022-10-01"))
                 .amount(0)
                 .price(600)
-                .image("https://eu.backendlessappcontent.com/E4714048-7BC7-FEA1-FF1A-C2F2C6AC1800/C3D936DA-E96F-4015-BAAD-DE5217BDD0FA/files/img/mockDataImgs/iphone.jpg")
+                .image("https://i.ibb.co/cvWFkHV/iphone.jpg")
                 .build();
         Coupon health1 = Coupon.builder().company(Company.builder().id(7).build())
                 .category(Category.Health)
@@ -289,7 +289,7 @@ public class InsertMockData implements CommandLineRunner {
                 .endDate(Date.valueOf("2022-10-01"))
                 .amount(2000)
                 .price(150)
-                .image("https://eu.backendlessappcontent.com/E4714048-7BC7-FEA1-FF1A-C2F2C6AC1800/C3D936DA-E96F-4015-BAAD-DE5217BDD0FA/files/img/mockDataImgs/healthWatch.jpg")
+                .image("https://i.ibb.co/b56Ht6G/health-Watch.jpg")
                 .build();
         Coupon home1 = Coupon.builder().company(Company.builder().id(3).build())
                 .category(Category.Home)
@@ -299,7 +299,7 @@ public class InsertMockData implements CommandLineRunner {
                 .endDate(Date.valueOf("2022-10-01"))
                 .amount(200)
                 .price(1575)
-                .image("https://eu.backendlessappcontent.com/E4714048-7BC7-FEA1-FF1A-C2F2C6AC1800/C3D936DA-E96F-4015-BAAD-DE5217BDD0FA/files/img/mockDataImgs/sofa.jpg")
+                .image("https://i.ibb.co/vQJPnY2/sofa.jpg")
                 .build();
         Coupon jewelry1 = Coupon.builder().company(Company.builder().id(7).build())
                 .category(Category.Jewelry)
@@ -309,7 +309,7 @@ public class InsertMockData implements CommandLineRunner {
                 .endDate(Date.valueOf("2022-10-01"))
                 .amount(150)
                 .price(3550)
-                .image("https://eu.backendlessappcontent.com/E4714048-7BC7-FEA1-FF1A-C2F2C6AC1800/C3D936DA-E96F-4015-BAAD-DE5217BDD0FA/files/img/mockDataImgs/rings.jpg")
+                .image("https://i.ibb.co/M64wfDM/rings.jpg")
                 .build();
         Coupon travel1 = Coupon.builder().company(Company.builder().id(1).build())
                 .category(Category.Travel)
@@ -319,7 +319,7 @@ public class InsertMockData implements CommandLineRunner {
                 .endDate(Date.valueOf("2022-10-01"))
                 .amount(1000)
                 .price(1500)
-                .image("https://eu.backendlessappcontent.com/E4714048-7BC7-FEA1-FF1A-C2F2C6AC1800/C3D936DA-E96F-4015-BAAD-DE5217BDD0FA/files/img/mockDataImgs/rome.jpg")
+                .image("https://i.ibb.co/SBmFkzQ/rome.jpg")
                 .build();
 
 
@@ -343,10 +343,10 @@ public class InsertMockData implements CommandLineRunner {
 
     }
 
-    private List<String> listOfCategories(){
-         List<String> categoryEntities = Arrays.stream(Category.values())
-            .map(Category::getDescription)
-            .collect(Collectors.toList());
+    private List<String> listOfCategories() {
+        List<String> categoryEntities = Arrays.stream(Category.values())
+                .map(Category::getDescription)
+                .collect(Collectors.toList());
         return categoryEntities;
     }
 
@@ -380,7 +380,7 @@ public class InsertMockData implements CommandLineRunner {
         try {
             categoryEntityRepository.deleteAll();
             listOfCategories().forEach((item) -> {
-                CategoryEntity category = CategoryEntity.builder().id(Category.valueOf(item).ordinal()+1).category(item).build();
+                CategoryEntity category = CategoryEntity.builder().id(Category.valueOf(item).ordinal() + 1).category(item).build();
                 categoryEntityRepository.save(category);
             });
         } catch (Exception e) {
@@ -391,7 +391,7 @@ public class InsertMockData implements CommandLineRunner {
 
     private void printIssue(String object) {
         System.out.println("=====================================ALERT===================================");
-        System.out.println(object+" duplicate entries issue: ");
+        System.out.println(object + " duplicate entries issue: ");
         System.out.println("disable @Component in com.jb.couponSystem.CLR.InsertMockData Class");
         System.out.println("=============================================================================");
         System.out.println();

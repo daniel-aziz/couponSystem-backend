@@ -13,5 +13,5 @@ Stack Used: Java, Spring Boot, MySQL, REST API's, Maven
 ## How to use?
 Download locally and open in your preferred IDE.\
 check for updated dependencies in pom.xml,
-configure the SQL in your machine, and configure application.properties in the resources folder.
+configure the SQL in your machine, and configure application.properties in the resources' folder.
 
